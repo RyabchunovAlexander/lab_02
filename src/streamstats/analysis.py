@@ -1,5 +1,8 @@
 from collections import Counter
 
+def get_count(item):
+    return item[1]
+
 class LogMetrics:
     def __init__(self):
         self.total_count = 0
@@ -24,7 +27,9 @@ class LogMetrics:
 
         level_report = dict(self.level_counts)
 
-        top_five = dict(self.top_sources.most_common(5))
+        alphabet_sorted = sorted(self.top_sources.items())
+        count_sorted = sorted(alphabet_sorted, key=get_count, reverse=True)
+        top_five = dict(count_sorted[:5])
 
         return {
             "total_count": self.total_count,
