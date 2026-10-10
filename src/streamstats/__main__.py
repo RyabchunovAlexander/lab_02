@@ -1,5 +1,6 @@
 import argparse
 import sys
+from typing import final
 
 from streamstats.analysis import LogMetrics
 from streamstats.errors import StreamStatsError, UnknownFormatError
@@ -10,14 +11,15 @@ def main():
     parser = argparse.ArgumentParser(description='Потоковый анализатор.')
     parser.add_argument('input_files', nargs='+', help='Путь к входному файлу (CSV или JSONL)')
     parser.add_argument('--output', required=True, help='Путь для сохранения JSON-отчёта')
+    parser.add_argument('--skip-invalid', action='store_true', help='Пропускать повреждённые строки')
 
     args = parser.parse_args()
 
     metrics = LogMetrics()
-    file_path = args.input_file
+    skipped_lines = 0
 
-    try:
-        for file_path in args.input_files:
+    for file_path in args.input_files:
+        try:
             if file_path.endswith('.jsonl'):
                 log_stream = stream_jsonl_lines(file_path)
             elif file_path.endswith('.csv'):
@@ -26,18 +28,28 @@ def main():
                 raise UnknownFormatError(f'Неподдерживаемый формат файла: {file_path}')
 
             for record in log_stream:
-                metrics.update(record)
+                try:
+                    metrics.update(record)
+                except StreamStatsError as error:
+                    if args.skip_invalid:
+                        print(f'WARNING: Пропущена строка. Причина: {error}', file=sys.stderr)
+                        skipped_lines += 1
+                    else:
+                        raise error
 
-            final_data = metrics.get_report_data()
-            export_metrics_to_json(final_data, args.output)
+        except StreamStatsError as error:
+            print(f'Критическая ошибка: {error}', file=sys.stderr)
+            sys.exit(2)
 
-    except StreamStatsError as error:
-        print(f'Критическая ошибка: {error}', file=sys.stderr)
-        sys.exit(2)
+        except Exception as unexpected_error:
+            print(f'Cистемный сбой: {unexpected_error}', file=sys.stderr)
+            sys.exit(2)
 
-    except Exception as unexpected_error:
-        print(f'Cистемный сбой: {unexpected_error}', file=sys.stderr)
-        sys.exit(2)
+final_data = metrics.get_report_data()
+
+final_data['skipped_count'] = skipped_lines
+
+export_metrics_to_json(final_data, args.output)
 
 if __name__ == '__main__':
     main()
