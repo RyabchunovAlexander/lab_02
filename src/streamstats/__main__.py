@@ -27,29 +27,36 @@ def main():
             else:
                 raise UnknownFormatError(f'Неподдерживаемый формат файла: {file_path}')
 
-            for record in log_stream:
-                try:
+            try:
+                for record in log_stream:
                     metrics.update(record)
-                except StreamStatsError as error:
-                    if args.skip_invalid:
-                        print(f'WARNING: Пропущена строка. Причина: {error}', file=sys.stderr)
-                        skipped_lines += 1
-                    else:
-                        raise error
+            except StreamStatsError as error:
+                if args.skip_invalid:
+                    print(f'WARNING: Пропущена строка. Причина: {error}', file=sys.stderr)
+                    skipped_lines += 1
+                else:
+                    raise error
+
+            except StreamStatsError as error:
+                print(f'Критическая ошибка: {error}', file=sys.stderr)
+                sys.exit(2)
+            except Exception as unexpected_error:
+                print(f'Системный сбой: {unexpected_error}', file=sys.stderr)
+                sys.exit(2)
 
         except StreamStatsError as error:
             print(f'Критическая ошибка: {error}', file=sys.stderr)
             sys.exit(2)
-
         except Exception as unexpected_error:
-            print(f'Cистемный сбой: {unexpected_error}', file=sys.stderr)
+            print(f'Системный сбой: {unexpected_error}', file=sys.stderr)
             sys.exit(2)
 
-final_data = metrics.get_report_data()
 
-final_data['skipped_count'] = skipped_lines
+    final_data = metrics.get_report_data()
 
-export_metrics_to_json(final_data, args.output)
+    final_data['skipped_count'] = skipped_lines
+
+    export_metrics_to_json(final_data, args.output)
 
 if __name__ == '__main__':
     main()
