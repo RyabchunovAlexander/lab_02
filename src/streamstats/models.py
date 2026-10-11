@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
-from streamstats.errors import MalformedEventError
 
+from streamstats.errors import IncorrectTimestampError, MalformedEventError
 
 ALLOWED_LEVELS = {"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}
 
@@ -16,12 +16,13 @@ class LogLine:
     def __post_init__(self):
 
         if self.level not in ALLOWED_LEVELS:
-            raise MalformedEventError("Неверный уровень")
+            raise MalformedEventError(f"Неверный уровень лога: {self.level}")
 
         if not self.source:
             raise MalformedEventError("Источник не может быть пустым")
 
         try:
-            datetime.fromisoformat(self.timestamp.replace("Z", "+00:00"))
+            clean_date = self.timestamp.replace("Z", "+00:00")
+            datetime.fromisoformat(clean_date)
         except ValueError:
-            raise MalformedEventError("Неверный формат даты")
+            raise IncorrectTimestampError(f"Неверный формат даты: {self.timestamp}")

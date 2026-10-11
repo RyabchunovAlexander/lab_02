@@ -1,0 +1,8 @@
+timestamp,level,source,message
+2026-10-11T14:00:01Z,INFO,web_server,User clicked button
+2026-10-11T14:00:02Z,DEBUG,database,Query insert ok
+КРИВАЯ_ДАТА_В_CSV,ERROR,billing,Connection broken
+2026-10-11T14:00:04Z,ERROR,billing,Payment timeout
+2026-10-11T14:00:05Z,CRITICAL,auth_service,Root login detected
+2026-10-11T14:00:06Z,INFO,api_gateway,Route matching
+2026-10-11T14:00:07Z,ERROR,dns_resolver,Host unreachable

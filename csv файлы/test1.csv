@@ -1,0 +1,26 @@
+timestamp,level,source,message
+2026-10-11T14:00:01Z,INFO,web_server,User clicked login
+2026-10-11T14:00:02Z,DEBUG,database,Connection pool active
+КРИВАЯ_ДАТА_В_CSV_1,ERROR,billing,Invalid gateway response
+2026-10-11T14:00:04Z,ERROR,billing,Card declined
+2026-10-11T14:00:05Z,CRITICAL,auth_service,Brute force attack detected
+2026-10-11T14:00:06Z,INFO,api_gateway,JWT token validated
+2026-10-11T14:00:07Z,ERROR,dns_resolver,NXDOMAIN lookup failed
+2026-10-11T14:00:08Z,НЕИЗВЕСТНЫЙ_УРОВЕНЬ,web_server,Битая строка уровня
+2026-10-11T14:00:09Z,INFO,notification_service,SMS queue push
+2026-10-11T14:00:10Z,ERROR,notification_service,SMS provider timeout
+2026-10-11T14:00:11Z,INFO,worker_pool,Task accepted
+2026-10-11T14:00:12Z,ERROR,worker_pool,Task OutOfMemoryError
+2026-10-11T14:00:13Z,INFO,web_server,Static content loaded
+2026-10-11T14:00:14Z,DEBUG,database,Query SELECT execution time
+2026-10-11T14:00:15Z,WARNING,cache_redis,Keyspace eviction warning
+2026-10-11T14:00:16Z,ERROR,billing,Payment processor gateway timeout
+2026-10-11T14:00:17Z,INFO,api_gateway,Rate limit quota checked
+2026-10-11T14:00:18Z,INFO,notification_service,Push token updated
+2026-10-11T14:00:19Z,ERROR,notification_service,FCM invalid registration token
+2026-10-11T14:00:20Z,DEBUG,worker_pool,Thread idle state changed
+2026-10-11T14:00:21Z,INFO,web_server,Websocket connection opened
+2026-10-11T14:00:22Z,WARNING,cache_redis,Replication lag detected
+2026-10-11T14:00:23Z,ERROR,dns_resolver,Upstream DNS timeout
+2026-10-11T14:00:24Z,INFO,api_gateway,CORS preflight request OK
+2026-10-11T14:00:25Z,CRITICAL,auth_service,Session fixation pattern

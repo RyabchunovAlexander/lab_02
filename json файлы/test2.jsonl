@@ -1,0 +1,35 @@
+{"timestamp": "2026-10-11T13:00:01Z", "level": "CRITICAL", "source": "auth_service", "message": "Root login"}
+{"timestamp": "2026-10-11T13:00:02Z", "level": "INFO", "source": "web_server", "message": "Closed"}
+{"timestamp": "2026-10-11T13:00:03Z", "level": "DEBUG", "source": "database", "message": "Ping"}
+{"timestamp": "2026-10-11T13:00:04Z", "level": "INFO", "source": "api_gateway", "message": "Done"}
+{"timestamp": "2026-10-11T13:00:05Z", "level": "INFO", "source": "web_server", "message": "End"}
+{"timestamp": "2026-10-11T13:00:06Z", "level": "ERROR", "source": "dns_resolver", "message": "Timeout"}
+{"timestamp": "2026-10-11T13:00:07Z", "level": "ERROR", "source": "dns_resolver", "message": "Refused"}
+{"timestamp": "2026-10-11T13:00:08Z", "level": "FATAL", "source": "auth_service", "message": "Критичный уровень"}
+{"timestamp": "2026-10-11T13:00:09Z", "level": "ERROR", "source": "auth_service", "message": "Lockout"}
+{"timestamp": "КРИВАЯ_ДАТА_В_ФАЙЛЕ_2", "level": "ERROR", "source": "broken_node", "message": "Skip me"}
+{"timestamp": "2026-10-11T13:00:11Z", "level": "INFO", "source": "worker_pool", "message": "Task start"}
+{"timestamp": "2026-10-11T13:00:12Z", "level": "ERROR", "source": "worker_pool", "message": "Task OOM"}
+{"timestamp": "2026-10-11T13:00:13Z", "level": "ERROR", "source": "worker_pool", "message": "Task failed"}
+{"timestamp": "2026-10-11T13:00:14Z", "level": "INFO", "source": "web_server", "message": "Final 1"}
+{"level": "INFO", "source": "web_server", "message": "Пропущено обязательное поле"}
+{"timestamp": "2026-10-11T13:00:16Z", "level": "INFO", "source": "web_server", "message": "Final 3"}
+{"timestamp": "2026-10-11T13:00:17Z", "level": "INFO", "source": "web_server", "message": "Final 4"}
+{"timestamp": "2026-10-11T13:00:18Z", "level": "INFO", "source": "web_server", "message": "Final 5"}
+{"timestamp": "2026-10-11T13:00:19Z", "level": "INFO", "source": "worker_pool", "message": "Task retry"}
+{"timestamp": "2026-10-11T13:00:20Z", "level": "INFO", "source": "notification_service", "message": "Email sent"}
+{"timestamp": "2026-10-11T13:00:21Z", "level": "INFO", "source": "api_gateway", "message": "Metrics pull"}
+{"timestamp": "2026-10-11T13:00:22Z", "level": "DEBUG", "source": "cache_redis", "message": "Flush"}
+{"timestamp": "2026-10-11T13:00:23Z", "level": "INFO", "source": "web_server", "message": "Keep-alive 3"}
+{"timestamp": "2026-10-11T13:00:24Z", "level": "WARNING", "source": "billing", "message": "Retry limit"}
+{"timestamp": "2026-10-11T13:00:25Z", "level": "INFO", "source": "billing", "message": "Invoice ok"}
+{"timestamp": "2026-10-11T13:00:26Z", "level": "DEBUG", "source": "database", "message": "Optimize block"}
+{"timestamp": "2026-10-11T13:00:27Z", "level": "INFO", "source": "api_gateway", "message": "V1 alpha"}
+{"timestamp": "2026-10-11T13:00:28Z", "level": "INFO", "source": "api_gateway", "message": "V1 beta"}
+{"timestamp": "2026-10-11T13:00:29Z", "level": "ERROR", "source": "worker_pool", "message": "Thread dead"}
+{"timestamp": "2026-10-11T13:00:30Z", "level": "ERROR", "source": "worker_pool", "message": "Thread dead 2"}
+{"timestamp": "2026-10-11T13:00:31Z", "level": "CRITICAL", "source": "worker_pool", "message": "Pool panic"}
+{"timestamp": "2026-10-11T13:00:32Z", "level": "INFO", "source": "notification_service", "message": "Push sent"}
+{"timestamp": "2026-10-11T13:00:33Z", "level": "ERROR", "source": "notification_service", "message": "Push error"}
+{"timestamp": "2026-10-11T13:00:34Z", "level": "INFO", "source": "web_server", "message": "Stream end"}
+{"timestamp": "2026-10-11T13:00:35Z", "level": "DEBUG", "source": "database", "message": "Vacuum"}

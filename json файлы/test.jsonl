@@ -1,0 +1,50 @@
+{"timestamp": "2026-10-11T12:00:01Z", "level": "INFO", "source": "web_server", "message": "User login"}
+{"timestamp": "2026-10-11T12:00:02Z", "level": "DEBUG", "source": "database", "message": "Connect OK"}
+{"timestamp": "КРИВАЯ_ДАТА_1", "level": "INFO", "source": "web_server", "message": "Ошибка 1: Сломан формат ISO"}
+{"timestamp": "2026-10-11T12:00:04Z", "level": "ERROR", "source": "billing", "message": "Timeout"}
+{"timestamp": "2026-10-11T12:00:05Z", "level": "ERROR", "source": "billing", "message": "Timeout 2"}
+{СЛОМАННЫЙ_JSON_БЕЗ_КАВЫЧЕК}
+{"timestamp": "2026-10-11T12:00:07Z", "level": "INFO", "source": "api_gateway", "message": "Route OK"}
+{"timestamp": "2026-10-11T12:00:08Z", "level": "WARNING", "source": "cache_redis", "message": "High memory"}
+{"timestamp": "2026-10-11T12:00:09Z", "level": "НЕИЗВЕСТНЫЙ_УРОВЕНЬ", "source": "web_server", "message": "Ошибка 3: Нет в ALLOWED_LEVELS"}
+{"timestamp": "2026-10-11T12:00:10Z", "level": "DEBUG", "source": "database", "message": "Query SELECT"}
+{"timestamp": "2026-10-11T12:00:11Z", "level": "INFO", "source": "api_gateway", "message": "Request"}
+{"timestamp": "2026-10-11T12:00:12Z", "level": "ERROR", "source": "api_gateway", "message": "Bad gateway"}
+{"timestamp": "2026-10-11T12:00:13Z", "level": "ERROR", "source": "api_gateway", "message": "Gateway timeout"}
+{"timestamp": "", "level": "INFO", "source": "web_server", "message": "Ошибка 4: Пустой таймстамп"}
+{"timestamp": "2026-10-11T12:00:15Z", "level": "WARNING", "source": "cache_redis", "message": "Eviction"}
+{"timestamp": "2026-10-11T12:00:16Z", "level": "CRITICAL", "source": "auth_service", "message": "Token expired"}
+{"timestamp": "2026-10-11T12:00:17Z", "level": "INFO", "source": "", "message": "Ошибка 5: Пустой source"}
+{"timestamp": "2026-10-11T12:00:18Z", "level": "DEBUG", "source": "database", "message": "Index scan"}
+{"timestamp": "2026-10-11T12:00:19Z", "level": "INFO", "source": "api_gateway", "message": "Response"}
+{"timestamp": "2026-10-11T12:00:20Z", "level": "INFO", "source": "web_server", "message": "Keep-alive"}
+{"timestamp": "2026-10-11T12:00:21Z", "level": "INFO", "source": "web_server", "message": "Data"}
+{"timestamp": "2026-10-11T12:00:22Z", "level": "DEBUG", "source": "database", "message": "Commit"}
+{"timestamp": "2026-10-11T12:00:23Z", "level": "INFO", "source": "web_server", "message": "Page view 2"}
+{"timestamp": "2026-10-11T12:00:24Z", "level": "ERROR", "source": "billing", "message": "Declined"}
+{"timestamp": "2026-10-11T12:00:25Z", "level": "ERROR", "source": "billing", "message": "No funds"}
+{"timestamp": "2026-10-11T12:00:26Z", "level": "CRITICAL", "source": "auth_service", "message": "Blocked"}
+{"timestamp": "2026-10-11T12:00:27Z", "level": "INFO", "source": "api_gateway", "message": "JSON valid"}
+{"timestamp": "2026-10-11T12:00:28Z", "level": "WARNING", "source": "cache_redis", "message": "Slow sync"}
+{"timestamp": "2026-10-11T12:00:29Z", "level": "INFO", "source": "web_server", "message": "Scroll"}
+{"timestamp": "2026-10-11T12:00:30Z", "level": "DEBUG", "source": "database", "message": "Disconnect"}
+{"timestamp": "2026-10-11T12:00:31Z", "level": "INFO", "source": "api_gateway", "message": "Header OK"}
+{"timestamp": "КРИВАЯ_ДАТА_2", "level": "ERROR", "source": "dns_resolver", "message": "Ошибка 6: Кривая дата 2"}
+{"timestamp": "2026-10-11T12:00:33Z", "level": "ERROR", "source": "dns_resolver", "message": "Servfail"}
+{"timestamp": "2026-10-11T12:00:34Z", "level": "INFO", "source": "web_server", "message": "Rendered"}
+{"timestamp": "2026-10-11T12:00:35Z", "level": "WARNING", "source": "cache_redis", "message": "Eviction 2"}
+{"timestamp": "2026-10-11T12:00:36Z", "level": "CRITICAL", "source": "auth_service", "message": "Root login"}
+{"timestamp": "2026-10-11T12:00:37Z", "level": "INFO", "source": "web_server", "message": "Closed"}
+{"timestamp": "2026-10-11T12:00:38Z", "level": "DEBUG", "source": "database", "message": "Ping"}
+{"timestamp": "2026-10-11T12:00:39Z", "level": "INFO", "source": "api_gateway", "message": "Done"}
+{"timestamp": "2026-10-11T12:00:40Z", "level": "INFO", "source": "web_server", "message": "End"}
+{"timestamp": "2026-10-11T12:00:41Z", "level": "ERROR", "source": "dns_resolver", "message": "Timeout"}
+{"timestamp": "2026-10-11T12:00:42Z", "level": "ERROR", "source": "dns_resolver", "message": "Refused"}
+{"timestamp": "2026-10-11T12:00:43Z", "level": "FATAL", "source": "auth_service", "message": "Ошибка 7: Неверный уровень лога 2"}
+{"timestamp": "2026-10-11T12:00:44Z", "level": "ERROR", "source": "auth_service", "message": "Lockout"}
+{"timestamp": "БИТАЯ_СТРОКА_ДАТЫ_3", "level": "ERROR", "source": "broken_node", "message": "Ошибка 8: Кривая дата 3"}
+{"timestamp": "2026-10-11T12:00:46Z", "level": "INFO", "source": "web_server", "message": "Final 1"}
+{"level": "INFO", "source": "web_server", "message": "Ошибка 9: Пропущено обязательное поле timestamp"}
+{"timestamp": "2026-10-11T12:00:48Z", "level": "INFO", "source": "web_server", "message": "Final 3"}
+{"timestamp": "2026-10-11T12:00:49Z", "level": "INFO", "source": "web_server", "message": "Final 4"}
+{"timestamp": "2026-10-11T12:00:50Z", "level": "INFO", "source": "web_server", "message": "Final 5"}

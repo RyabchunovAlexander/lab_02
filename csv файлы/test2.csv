@@ -1,0 +1,26 @@
+timestamp,level,source,message
+2026-10-11T15:00:01Z,CRITICAL,auth_service,Password leak detected
+2026-10-11T15:00:02Z,INFO,web_server,Session destroyed
+2026-10-11T15:00:03Z,DEBUG,database,Vacuum table complete
+2026-10-11T15:00:04Z,ERROR,api_gateway,Rate limit exceeded
+2026-10-11T15:00:05Z,ERROR,dns_resolver,BGP route flapping
+2026-10-11T15:00:06Z,FATAL,auth_service,Битая строка уровня 2
+2026-10-11T15:00:07Z,ERROR,auth_service,User locked out
+КРИВАЯ_ДАТА_В_CSV_2,ERROR,broken_node,Node isolated
+2026-10-11T15:00:09Z,INFO,worker_pool,Thread revived
+2026-10-11T15:00:10Z,ERROR,worker_pool,Database deadlock
+2026-10-11T15:00:11Z,CRITICAL,worker_pool,Segmentation fault
+2026-10-11T15:00:12Z,INFO,notification_service,Email dispatched
+2026-10-11T15:00:13Z,ERROR,notification_service,SMTP handshake failed
+2026-10-11T15:00:14Z,INFO,web_server,HTTP 200 OK index page
+2026-10-11T15:00:15Z,DEBUG,database,Row locks released successfully
+2026-10-11T15:00:16Z,WARNING,cache_redis,CPU threshold reached 85 percent
+2026-10-11T15:00:17Z,ERROR,billing,Refund request failed transaction
+2026-10-11T15:00:18Z,INFO,api_gateway,Gzip compression enabled
+2026-10-11T15:00:19Z,INFO,notification_service,Apple feedback service processed
+2026-10-11T15:00:20Z,ERROR,worker_pool,Executor service shutdown hook failed
+2026-10-11T15:00:21Z,INFO,web_server,Keep-alive packet received
+2026-10-11T15:00:22Z,DEBUG,database,Transaction isolation level read committed
+2026-10-11T15:00:23Z,INFO,api_gateway,Upstream connection closed cleanly
+2026-10-11T15:00:24Z,WARNING,cache_redis,BGSAVE process started background
+2026-10-11T15:00:25Z,CRITICAL,auth_service,CSRF token mismatch detected

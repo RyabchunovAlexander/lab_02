@@ -1,0 +1,12 @@
+Metric,Key,Value
+General,total_count,6
+General,skipped_count,1
+General,first_timestamp,2026-10-11T14:00:01Z
+General,last_timestamp,2026-10-11T14:00:07Z
+LevelCount,INFO,2
+LevelCount,DEBUG,1
+LevelCount,ERROR,2
+LevelCount,CRITICAL,1
+TopSourceError,auth_service,1
+TopSourceError,billing,1
+TopSourceError,dns_resolver,1

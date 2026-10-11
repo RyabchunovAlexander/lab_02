@@ -1,0 +1,20 @@
+{"timestamp": "2026-10-11T12:00:01Z", "level": "INFO", "source": "web_server", "message": "User login"}
+{"timestamp": "2026-10-11T12:00:02Z", "level": "DEBUG", "source": "database", "message": "Connect OK"}
+{"timestamp": "КРИВАЯ_ДАТА_В_ФАЙЛЕ_1", "level": "INFO", "source": "web_server", "message": "Битая строка"}
+{"timestamp": "2026-10-11T12:00:04Z", "level": "ERROR", "source": "billing", "message": "Timeout"}
+{"timestamp": "2026-10-11T12:00:05Z", "level": "ERROR", "source": "billing", "message": "Timeout 2"}
+{СЛОМАННЫЙ_JSON_В_ФАЙЛЕ_1}
+{"timestamp": "2026-10-11T12:00:07Z", "level": "INFO", "source": "api_gateway", "message": "Route OK"}
+{"timestamp": "2026-10-11T12:00:08Z", "level": "WARNING", "source": "cache_redis", "message": "High memory"}
+{"timestamp": "2026-10-11T12:00:09Z", "level": "НЕИЗВЕСТНЫЙ_УРОВЕНЬ", "source": "web_server", "message": "Ошибка уровня"}
+{"timestamp": "2026-10-11T12:00:10Z", "level": "DEBUG", "source": "database", "message": "Query SELECT"}
+{"timestamp": "2026-10-11T12:00:11Z", "level": "INFO", "source": "api_gateway", "message": "Request"}
+{"timestamp": "2026-10-11T12:00:12Z", "level": "ERROR", "source": "api_gateway", "message": "Bad gateway"}
+{"timestamp": "2026-10-11T12:00:13Z", "level": "ERROR", "source": "api_gateway", "message": "Gateway timeout"}
+{"timestamp": "2026-10-11T12:00:14Z", "level": "INFO", "source": "web_server", "message": "Keep-alive"}
+{"timestamp": "2026-10-11T12:00:15Z", "level": "WARNING", "source": "cache_redis", "message": "Eviction"}
+{"timestamp": "2026-10-11T12:00:16Z", "level": "CRITICAL", "source": "auth_service", "message": "Token expired"}
+{"timestamp": "2026-10-11T12:00:17Z", "level": "INFO", "source": "", "message": "Пустой источник"}
+{"timestamp": "2026-10-11T12:00:18Z", "level": "DEBUG", "source": "database", "message": "Index scan"}
+{"timestamp": "2026-10-11T12:00:19Z", "level": "INFO", "source": "api_gateway", "message": "Response"}
+{"timestamp": "2026-10-11T12:00:20Z", "level": "INFO", "source": "web_server", "message": "Keep-alive 2"}

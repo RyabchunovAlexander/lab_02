@@ -1,0 +1,20 @@
+{
+    "total_count": 48,
+    "first_timestamp": "2026-10-11T12:00:01Z",
+    "last_timestamp": "2026-10-11T13:00:35Z",
+    "level_counts": {
+        "INFO": 23,
+        "DEBUG": 7,
+        "ERROR": 12,
+        "WARNING": 3,
+        "CRITICAL": 3
+    },
+    "top_sources": {
+        "worker_pool": 5,
+        "auth_service": 3,
+        "api_gateway": 2,
+        "billing": 2,
+        "dns_resolver": 2
+    },
+    "skipped_count": 7
+}

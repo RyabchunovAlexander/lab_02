@@ -1,7 +1,9 @@
 from collections import Counter
 
+
 def get_count(item):
     return item[1]
+
 
 class LogMetrics:
     def __init__(self):
