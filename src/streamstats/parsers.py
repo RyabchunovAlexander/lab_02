@@ -6,6 +6,7 @@ from streamstats.models import LogLine
 
 
 def stream_jsonl_lines(file_path: str):
+    """Построчное чтение и валидация файлов формата JSONL."""
     with open(file_path, mode="r", encoding="utf-8") as file:
         for line_number, text_line in enumerate(file, start=1):
             clean_line = text_line.strip()
@@ -15,6 +16,7 @@ def stream_jsonl_lines(file_path: str):
             try:
                 data = json.loads(clean_line)
 
+                # Проверяем, что в словаре есть все нужные ключи
                 for field in ("timestamp", "level", "source", "message"):
                     if field not in data:
                         raise MalformedEventError(f"Отсутствует обязательное поле: {field}")
@@ -42,9 +44,11 @@ def stream_jsonl_lines(file_path: str):
 
 
 def stream_csv_rows(file_path: str):
+    """Построчное чтение и валидация файлов формата CSV."""
     with open(file_path, mode="r", encoding="utf-8") as file:
         reader = csv.reader(file)
         try:
+            # Считываем первую строчку как заголовки
             headers = next(reader)
         except StopIteration:
             return
@@ -52,10 +56,12 @@ def stream_csv_rows(file_path: str):
         expected_count = len(headers)
 
         for line_number, row in enumerate(reader, start=2):
+            # Пропускаем пустые строки
             if not row or all(not cell.strip() for cell in row):
                 continue
 
             try:
+                # Проверяем длину текущей строки лога
                 if len(row) != expected_count:
                     raise MalformedEventError(
                         message=f"Неверное количество колонок в строке {line_number}",
@@ -65,6 +71,7 @@ def stream_csv_rows(file_path: str):
 
                 data = dict(zip(headers, row))
 
+                # Проверяем наличие обязательных колонок
                 for field in ("timestamp", "level", "source", "message"):
                     if field not in data:
                         raise MalformedEventError(f"В CSV отсутствует обязательный столбец: {field}")

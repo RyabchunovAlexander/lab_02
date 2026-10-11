@@ -1,5 +1,5 @@
 class StreamStatsError(Exception):
-    """Базовое исключение для анализатора."""
+    """Базовый класс ошибок для всего проекта."""
 
     def __init__(self, message: str, filename: str | None = None, line_number: int | None = None):
         super().__init__(message)
@@ -8,16 +8,16 @@ class StreamStatsError(Exception):
 
 
 class UnknownFormatError(StreamStatsError):
-    """Формат входного файла не поддерживается."""
+    """Ошибка, если передан неподдерживаемый формат файла."""
 
 
 class MalformedEventError(StreamStatsError):
-    """Строка имеет неверную структуру или пустые поля."""
+    """Ошибка валидации: битая структура или пустые поля."""
 
 
 class IncorrectTimestampError(StreamStatsError):
-    """Временная метка не соответствует стандарту."""
+    """Ошибка, дата не в формате ISO 8601."""
 
 
 class IncorrectCLIArgsError(StreamStatsError):
-    """Переданы некорректные параметры командной строки."""
+    """Ошибка при передаче неверных аргументов в консоли."""

@@ -2,10 +2,13 @@ from collections import Counter
 
 
 def get_count(item):
+    """Вспомогательная функция для сортировки по значению."""
     return item[1]
 
 
 class LogMetrics:
+    """Класс для инкрементального подсчета статистики логов."""
+
     def __init__(self):
         self.total_count = 0
         self.level_counts = Counter()
@@ -14,21 +17,26 @@ class LogMetrics:
         self.last_timestamp = None
 
     def update(self, log_line):
+        """Обновление метрик на основе одной строки лога."""
         self.total_count += 1
         self.level_counts[log_line.level] += 1
 
+        # Собираем источники только для критических ошибок
         if log_line.level in ("ERROR", "CRITICAL"):
             self.top_sources[log_line.source] += 1
 
+        # Запоминаем самую первую временную метку
         if self.first_timestamp is None:
             self.first_timestamp = log_line.timestamp
 
+        # Последняя метка постоянно перезаписывается по ходу чтения
         self.last_timestamp = log_line.timestamp
 
     def get_report_data(self):
-
+        """Формирование словаря с финальной статистикой."""
         level_report = dict(self.level_counts)
 
+        # Сортируем сначала по алфавиту, а потом по количеству для детерминированности
         alphabet_sorted = sorted(self.top_sources.items())
         count_sorted = sorted(alphabet_sorted, key=get_count, reverse=True)
         top_five = dict(count_sorted[:5])

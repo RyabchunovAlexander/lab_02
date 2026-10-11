@@ -11,6 +11,7 @@ def test_jsonl_ok(tmp_path):
     )
     path.write_text(line, encoding="utf-8")
 
+    # Превращаем ленивый генератор в список для проверки элементов
     res = list(stream_jsonl_lines(str(path)))
     assert len(res) == 1
     assert res[0].level == "DEBUG"

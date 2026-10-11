@@ -12,6 +12,7 @@ from streamstats.report import export_metrics_to_json
 
 
 def main():
+    """Точка входа CLI для анализатора логов."""
     parser = argparse.ArgumentParser(description="Потоковый анализатор логов.")
 
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -42,13 +43,17 @@ def main():
     metrics = LogMetrics()
     skipped_lines = 0
 
+    #Последовательно обрабатывается каждый переданный файл
     for file_path in args.input_files:
         try:
             if args.format == "jsonl":
                 log_stream = stream_jsonl_lines(file_path)
             elif args.format == "csv":
                 log_stream = stream_csv_rows(file_path)
-
+            else:
+                from streamstats.errors import UnknownFormatError
+                raise UnknownFormatError(f"Неподдерживаемый формат: {args.format}")
+            # Вычитаются элементы из потока-генератора
             for item in log_stream:
                 if isinstance(item, StreamStatsError):
                     if args.skip_invalid:
@@ -58,6 +63,7 @@ def main():
                         )
                         skipped_lines += 1
                     else:
+                        # Собирается контекст для падения при первом же сбое
                         log_context = f" в файле {item.filename} на строке {item.line_number}" if getattr(item, "filename", None) and getattr(item, "line_number", None) else ""
                         print(f"Критическая ошибка{log_context}: {item}", file=sys.stderr)
                         sys.exit(2)
@@ -73,9 +79,11 @@ def main():
             print(f"Системный сбой: {unexpected_error}", file=sys.stderr)
             sys.exit(2)
 
+    # Формируется итоговый набор данных для выгрузки
     final_data = metrics.get_report_data()
     final_data["skipped_count"] = skipped_lines
 
+    # Выбирается формат экспорта на основе расширения выходного файла
     if args.output.endswith(".csv"):
         from streamstats.report import export_metrics_to_csv
         export_metrics_to_csv(final_data, args.output)
