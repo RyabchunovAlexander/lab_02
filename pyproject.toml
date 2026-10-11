@@ -4,6 +4,10 @@ version = "0.1.0"
 description = "Stream log file analyzer"
 requires-python = ">=3.10"
 
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0.0",
